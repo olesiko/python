@@ -1,0 +1,40 @@
+import random
+
+hp = 100
+speed = 0
+distance = 400
+
+yetti = 1
+tree = 2
+rock = 3
+
+while True:
+
+    chanceEnemy = random.randint(0,10)
+    if chanceEnemy == tree:
+        print("вы столкнулись с деревом")
+        hp -= 8
+        print(f"у вас остались {hp} жизни")
+    elif chanceEnemy == yetti:
+        print("вы столкнулись с йети")
+        hp -= 10
+        print(f"у вас остались {hp} жизни")
+    elif chanceEnemy == rock:
+        print("вы столкнулись с камнем")
+        hp -= 5
+        print(f"у вас остались {hp} жизни")
+
+    hp -= 1
+    speed += 1
+    distance -= speed
+    print(f"\nВы летите со скоростью {speed} км/ч")
+    print(f"осталось проехать {distance} километров")
+    print(f"у вас осталось {hp} жизней")
+    if (distance <= 0):
+        print("ура победа")
+        break
+    if(hp <= 0):
+        print("вас сожрали")
+        break
+
+
