@@ -1,6 +1,10 @@
 from tkinter import *
 # создаем окошко программф
 
+def AnyKey():
+    print("кнопка жмакнута")
+    label.configure(text="текст поменялся")
+
 root = Tk("моя программа")
 # работаем с окошком
 root.geometry("500x300")
@@ -12,6 +16,9 @@ root["bg"] = "black"
 frame = Frame(root,padx=100,pady=10,width=200,height=200)
 # настраиваем местоположение фрейма
 frame.place(anchor="e", relx=1, rely=0.5)
+Button(frame,text="кнопка",fg="white",bg="green",width=10,height=10,wraplength=100,command=AnyKey).grid(column=0,row=1)
+label = Label(frame,text="заголовок")
+label.grid(column=0,row=0)
 
 
 frame2 = Frame(root,padx=100,pady=10,width=200,height=200)
